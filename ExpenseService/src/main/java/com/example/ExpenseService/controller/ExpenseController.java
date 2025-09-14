@@ -21,10 +21,10 @@ public class ExpenseController {
 
     // 1️⃣ Create a new expense
     @PostMapping
-    public ResponseEntity<Expense> createExpense(@RequestBody Expense expense){
-        Expense savedExpense = expenseService.saveExpense(expense);
-        return ResponseEntity.ok(savedExpense);
+    public Expense createExpense(@RequestBody Expense expense) {
+        return expenseService.addExpense(expense); // make sure it's this
     }
+
 
     // 2️⃣ Get all expenses
     @GetMapping
